@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'adlery-pro';
+    src: url('fonts/adlery-pro.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Universal box-sizing and horizontal overflow guard */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page content grows to push the footer to the bottom on short pages */
+main {
+    flex: 1;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #bf0a30;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.nav-logo img {
+    height: 5em;
+    width: auto;
+    display: block;
+}
+
+.nav-instagram img {
+    height: 3.5em;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Visible outline for keyboard users */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+main a:focus-visible {
+    outline-color: #bf0a30;
+}
+
+.main-pic {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 40px auto 0;
+}
+
+.name {
+    margin: 15px 0 40px;
+    text-align: center;
+    color: #bf0a30;
+    font-size: 5em;
+    font-family: 'adlery-pro', cursive;
+    font-weight: normal;
+}
+
+.biography {
+    margin: 0 0 40px;
+    padding: 0 50px;
+    text-align: left;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+.footer {
+    padding: 20px;
+    background-color: #bf0a30;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+}
+
+.footer a {
+    color: #ffffff;
+}
+
+footer {
+    text-align:center;
+    padding:10px;
+    font-size:350;
+    font-family:Arial, Helvetica, sans-serif;
+ }
+
+/* ── Mobile layout ──
+   Every page needs, for this to work:
+   - <meta name="viewport" content="width=device-width, initial-scale=1.0"> in <head>
+   - <script src="nav.js" defer></script> in <head>
+   - the same <nav> markup as Index.html, including the .hamburger button
+   Add mobile overrides for any new classes inside this block. */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        min-height: 56px;
+    }
+
+    .nav-logo img {
+        height: 3.5em;
+    }
+
+    /* Instagram icon and hamburger sit together on the right */
+    .nav-instagram {
+        margin-left: auto;
+        margin-right: 8px;
+    }
+
+    .nav-instagram img {
+        height: 2.5em;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Collapsible link list drops below the bar and expands the navbar */
+    .nav-links {
+        order: 10;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    .nav-links.open {
+        max-height: 500px;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    /* Responsive type scale */
+    .name {
+        font-size: clamp(40px, 14vw, 80px);
+    }
+
+    .biography {
+        padding: 0 20px;
+        font-size: clamp(16px, 4vw, 20px);
+    }
+
+    .main-pic {
+        margin-top: 24px;
+        padding: 0 16px;
+    }
+
+    .footer {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Skip the menu animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .nav-links {
+        transition: none;
+    }
+}
