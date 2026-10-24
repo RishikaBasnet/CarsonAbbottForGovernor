@@ -21,6 +21,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background:
+        linear-gradient(
+        to bottom,
+        white 0%,
+        white 10%,
+        rgba(255, 255, 255, 0.7), #f9c9d3),
+    url("starsbackground.png");
+  background-repeat:250px 200px;
 }
 
 /* Page content grows to push the footer to the bottom on short pages */
@@ -140,12 +148,180 @@ footer {
     font-family:Arial, Helvetica, sans-serif;
  }
 
-/* ── Mobile layout ──
-   Every page needs, for this to work:
-   - <meta name="viewport" content="width=device-width, initial-scale=1.0"> in <head>
-   - <script src="nav.js" defer></script> in <head>
-   - the same <nav> markup as Index.html, including the .hamburger button
-   Add mobile overrides for any new classes inside this block. */
+ .title {
+    margin: 50px 0 40px;
+    text-align: center;
+    color: #bf0a30;
+    font-size: 5em;
+    font-family: 'adlery-pro', cursive;
+    font-weight: normal;
+ }
+
+ h2 {
+    font-family:Georgia;
+    text-align:center;
+    color:rgb(149, 0, 0);
+    font-size: 25px;  
+    font-weight:100;
+    margin-left:50px;
+    margin-right:50px;
+}
+
+/*Mr Rohn Section */
+.container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0;               
+  flex-wrap: wrap;   
+}
+
+.image {
+  width: 33%;
+  max-width: 450px;
+  padding-left: 60px;
+}
+.image img {
+  width: 100%;
+  max-width: 100%;         
+  height: auto;             
+  display: block;   
+  border-radius: 20px;   
+  box-shadow: 0 4px 13px rgb(0,0,0); 
+}
+
+.text {
+  flex: 1;                  
+  min-width: 200px;
+  margin-top:10px;
+}
+
+.endorsementNames {
+  font-weight: 800; 
+  font-size:50px;
+  text-align: left;
+  margin: 0;
+  font-family:impact;
+}
+p {
+  font-size: 20px;
+}
+h3 {
+    font-size: large;
+}
+
+/* Endorser titles grow with the screen: 18px on phones, up to 26px on wide desktops */
+.text h3,
+.text2 h3 {
+    font-size: clamp(18px, 1.75vw, 26px);
+}
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image img {
+    width: 100%; 
+  }
+}
+.text {
+  padding-right: 60px;
+  font-size: clamp(1rem, 2vw, 1.5rem); 
+  line-height: 1.4; 
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-family:Georgia;
+  word-break: break-word;
+  white-space: normal; 
+}
+
+@media (max-width: 768px) {
+  .text {
+    max-width: 100%; 
+  }
+}
+
+.break::after {
+  content: "";
+  display: block;
+  margin-top: 0.3em;  
+}
+
+/*Wagner Section*/
+.container2 {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0;               
+  flex-wrap: wrap;
+}
+
+.image2 {
+  width: 33%;
+  max-width: 450px;
+  padding-right: 45px;
+}
+.image2 img {
+  width: 100%;
+  max-width: 100%;         
+  height: auto;             
+  display: block;   
+  border-radius: 20px;   
+  box-shadow: 0 4px 13px rgb(0,0,0); 
+}
+
+.text2 {
+  flex: 1;                  
+  min-width: 200px;
+  margin-top:10px;
+}
+.endorsementNames2 {
+  font-weight: 800; 
+  font-size:50px;
+  text-align: right;
+  margin: 0;
+  font-family:impact;
+}
+p {
+  font-size: 20px;
+}
+
+@media (max-width: 500px) {
+  .container2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image2 img {
+    width: 100%; 
+  }
+}
+.text2 {
+  padding-left: 60px;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem); 
+  line-height: 1.4; 
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-family:Georgia;
+  word-break: break-word;
+  white-space: normal; 
+  text-align:right;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .text2 {
+    max-width: 100%; 
+  }
+}
+
+.break::after {
+  content: "";
+  display: block;
+  margin-top: 0.3em;  
+}
+
+
+/* ── Mobile layout ──*/
 @media (max-width: 768px) {
     .navbar {
         flex-wrap: wrap;
@@ -211,6 +387,19 @@ footer {
     .footer {
         font-size: 14px;
         overflow-wrap: anywhere;
+    }
+
+    /* Endorsement photos go full width once the text stacks below them */
+    .image,
+    .image2 {
+        width: 100%;
+        max-width: none;
+        padding: 0 20px;
+    }
+
+    .text,
+    .text2 {
+        padding: 0 20px;
     }
 }
 
