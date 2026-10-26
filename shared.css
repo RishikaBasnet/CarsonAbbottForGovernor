@@ -1,3 +1,6 @@
+/* Lora for body text (@import must stay at the very top of this file) */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 @font-face {
     font-family: 'adlery-pro';
     src: url('fonts/adlery-pro.regular.ttf') format('truetype');
@@ -118,15 +121,37 @@ main a:focus-visible {
     font-weight: normal;
 }
 
+/* Frosted white panel keeps the text readable over the starry background */
 .biography {
-    margin: 0 0 40px;
-    padding: 0 50px;
+    margin: 0 50px 40px;
+    padding: 30px 40px;
     text-align: left;
-    color: #000000;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #1a1a1a;
+    font-family: 'Lora', Georgia, serif;
     font-size: 1.25em;
     font-weight: normal;
-    line-height: 1.6;
+    line-height: 1.7;
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Paragraphs follow the .biography size (overrides the global p rule) */
+.biography p {
+    font-size: inherit;
+    margin: 0 0 1.2em;
+}
+
+.biography p:last-child {
+    margin-bottom: 0;
+}
+
+.biography .bio-intro {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.15em;
 }
 
 .footer {
@@ -332,7 +357,6 @@ p {
         height: 3.5em;
     }
 
-    /* Instagram icon and hamburger sit together on the right */
     .nav-instagram {
         margin-left: auto;
         margin-right: 8px;
@@ -346,7 +370,6 @@ p {
         display: flex;
     }
 
-    /* Collapsible link list drops below the bar and expands the navbar */
     .nav-links {
         order: 10;
         width: 100%;
@@ -369,13 +392,13 @@ p {
         font-size: 1rem;
     }
 
-    /* Responsive type scale */
     .name {
         font-size: clamp(40px, 14vw, 80px);
     }
 
     .biography {
-        padding: 0 20px;
+        margin: 0 16px 30px;
+        padding: 20px;
         font-size: clamp(16px, 4vw, 20px);
     }
 
@@ -389,15 +412,13 @@ p {
         overflow-wrap: anywhere;
     }
 
-    /* Endorsement photos go full width once the text stacks below them */
     .image,
     .image2 {
         width: 100%;
         max-width: none;
         padding: 0 20px;
     }
-
-    /* Endorser name and title always sit above the photo on mobile */
+    
     .text,
     .text2 {
         order: -1;
@@ -405,9 +426,191 @@ p {
     }
 }
 
-/* Skip the menu animation for users who prefer reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
     .nav-links {
         transition: none;
     }
+}
+
+/*Core policies section*/
+.policies-section {
+  padding: 0 40px 20px;
+}
+
+.policies-title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #bf0a30;
+  font-size: 40px;
+  font-weight: normal;
+  text-align: left;
+  margin: 0 0 20px 0;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Frosted cards to match the biography panel */
+.policy-card {
+  padding: 24px 28px;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-top: 6px solid #bf0a30;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.policy-card h3 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: normal;
+  font-size: 28px;
+  color: #bf0a30;
+  margin: 0 0 14px 0;
+  letter-spacing: 0.5px;
+}
+
+.policy-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.policy-card li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-family: 'Lora', Georgia, serif;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+
+.policy-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* Red star bullets */
+.policy-card li::before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #bf0a30;
+}
+
+@media (max-width: 600px) {
+  .policies-section { padding: 0 16px 16px; }
+  .policies-title { font-size: 32px; }
+  .policy-grid { grid-template-columns: 1fr; }
+  .policy-card { padding: 20px; }
+}
+
+/*Voter information cards (reuse .policy-card styling)*/
+.voter-section {
+  padding: 0 40px 40px;
+}
+
+/* Full-width cards stacked vertically */
+.voter-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .voter-section { padding: 0 16px 24px; }
+}
+
+/*About me section 2*/
+.activities-section {
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.activities {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #bf0a30;
+  font-size: 40px;
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+.carousel {
+  background-color: #bf0a30;
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 16px 0 0 0;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.35s ease;
+}
+
+.carousel-slide {
+  flex: 0 0 220px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px solid rgba(64, 47, 86, 0.15);
+  background: white;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.slide-caption {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: rgb(82, 15, 15);
+  font-family: 'Josefin Sans';
+  line-height: 1.5;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.carousel-btn {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(64, 47, 86, 0.3);
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(64, 47, 86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: static;
+  transform: none;
+}
+.carousel-btn:hover { background: rgba(64, 47, 86, 0.1); }
+.carousel-btn:disabled { opacity: 0.3; cursor: default; }
+
+@media (max-width: 600px) {
+  .carousel-slide { flex: 0 0 100%; }
+  .activities-section { padding: 24px 16px; }
 }
