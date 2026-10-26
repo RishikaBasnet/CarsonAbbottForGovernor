@@ -38,8 +38,142 @@
     <main>
         <img class="main-pic" src="BiographyPicture.png" alt="Image of Carson Abbott">
         <h1 class="name">Carson Abbott</h1>
-        <p class="biography"><strong>About the Candidate:</strong> Coming soon...</p>
-    </main>
+        <!--Biography-->
+        <div class="biography">
+            <p class="bio-intro">I am Carson Abbott, a native Texan who has served as the Republican Governor of Texas for the past 11 years.</p>
+            <p>Native to Wichita Falls, Texas specifically, Abbott grew up with a homemaker mother and a father who was a stockbroker and insurance salesman. His family relocated to Longview, Texas when he was young and later Duncanville, a suburb of Dallas. When Abbott was in high school, he was faced with his father’s death, causing both his mother and himself to pick up various jobs to support the family. With this experience, Abbott has become well-versed in the world of financial responsibility and the importance of hard work &amp; discipline.</p>
+            <p>In 1977, Abbott enrolled in the University of Texas at Austin as a Business Administration major. He completed schooling here in 1981 and soon after married his current wife, Cecilia Abbott. Abbott later went on to earn a law degree from Vanderbilt University’s Law School. In the years following this academic achievement up until now, he has served various roles, including being an Attorney, State District Judge, Justice of the Texas Supreme Court, and Attorney General of Texas.</p>
+            <p>He has now served as the Governor of Texas for over a decade and is seeking re-election. Please refer to the information below for his core policies.</p>
+        </div>
+
+        <!--Core policies-->
+        <section class="policies-section">
+            <h2 class="policies-title">Core Policies of Abbott & the national Republican Party platform</h2>
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <h3>Taxes &amp; Housing</h3>
+                    <ul>
+                        <li>Cutting property taxes to reduce the financial burdens placed upon our homeowners</li>
+                        <li>Limiting government spending and local tax increases</li>
+                        <li>Making housing more affordable by reducing regulations that make construction expensive</li>
+                        <li>Speeding up construction approvals so that more homes can be built to meet growing demands</li>
+                    </ul>
+                </div>
+                <div class="policy-card">
+                    <h3>Border Security</h3>
+                    <ul>
+                        <li>Stronger enforcement along the U.S. &amp; Mexico border to reduce the amount of illegal crossings</li>
+                        <li>Building additional physical barriers, including sections of border wall &amp; fencing</li>
+                        <li>Implementing tougher measures against illegal immigration, including detaining migrants</li>
+                        <li>Building upon past state initiatives to deploy Texas National Guard troops and state law enforcement officers to the border</li>
+                    </ul>
+                </div>
+                <div class="policy-card">
+                    <h3>Education</h3>
+                    <ul>
+                        <li>Implementing school voucher programs that will allow families to use public funds toward private school tuition &amp; other educational expenses</li>
+                        <li>Giving parents more control over children’s school curriculum</li>
+                        <li>Increasing funding for public education while reducing unnecessary administrative spending</li>
+                        <li>Reducing college costs &amp; creating accelerated degree programs so students can graduate sooner</li>
+                    </ul>
+                </div>
+                <div class="policy-card">
+                    <h3>Energy</h3>
+                    <ul>
+                        <li>Expanding competition among electricity providers so consumers can choose the best plans for them</li>
+                        <li>Expanding energy production &amp; maintaining a strong energy industry</li>
+                        <li>Allowing for affordable and reliable energy to help attract businesses, create jobs, and strengthen our economy</li>
+                    </ul>
+                </div>
+                <div class="policy-card">
+                    <h3>Public Safety</h3>
+                    <ul>
+                        <li>Providing police and state law enforcement agencies with resources to fight crimes</li>
+                        <li>Increasing accountability for serious crimes by keeping repeat and violent offenders behind bars</li>
+                        <li>Implementing stricter bail rules for people accused of specific violent crimes</li>
+                        <li>Expanding on anti-gang initiatives</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!--Pictures of Carson Abbott-->
+    <div class="activities-section">
+    <h1 class="activities">Some Pictures of Abbott in Action</h1>
+    <div class="carousel">
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="AbbottFightingGangViolence.png" alt="Abbott giving a speech about gang violence.">
+                    <div class="slide-caption">Abbott pictured annoucning a $500k grant to fight Houston gang violence back in April of 2017.</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="AbbottGettingAward.png" alt="Abbott recieving the Sun and Star Legacy Award.">
+                    <div class="slide-caption">Governor Abbott recieving the Sun and Star Legacy Award during the Japan American Society DFW Awards Gala, displaying the connection between Japan and Texas.</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="AbbottDiscussingPolicies.png" alt="Abbott Discussing Policies upon his first election.">
+                    <div class="slide-caption"> Governor Abbott discussing his policies for the upcoming term in 2014 during his first designation to the governor position.</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="AbbottFamily.png" alt="Carson Abbott with his Family">
+                    <div class="slide-caption">Carson Abbott pictured with his wife, Cecilia Abbott, the First Hispanic First Lady of Texas, and their daughter, Audrey Abbott. </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="AbbottAtBorder.png" alt="Abbott discussing border policies with President Trump.">
+                    <div class="slide-caption">Governor Abbott talks with President Donald Trump in Eagle Pass during a visit to the U.S.- Mexico border in 2024. </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="AbbottInACampaign.png" alt="Abbott in a Re-election campaign event">
+                    <div class="slide-caption">Carson Abbott at his 2022 re-election campaign event, speaking to the people.</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="AbbottSpeech.png" alt="Abbott giving a speech">
+                    <div class="slide-caption">Governor Abbott speaking at a press conference at the Texas Capitol in Austin.</div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev-btn" disabled>&#8592;</button>
+            <button class="carousel-btn next-btn">&#8594;</button>
+        </div>
+    </div>
+    <script>
+        (function() {
+            var carousel = document.querySelector('.activities-section .carousel');
+            var track = carousel.querySelector('.carousel-track');
+            var slides = track.querySelectorAll('.carousel-slide');
+            var prevBtn = carousel.querySelector('.prev-btn');
+            var nextBtn = carousel.querySelector('.next-btn');
+            var current = 0;
+            var total = slides.length;
+
+            function getSlideWidth() {
+                return slides[0].offsetWidth + 16;
+            }
+
+            function goTo(n) {
+                current = Math.max(0, Math.min(n, total - 1));
+                track.style.transform = 'translateX(-' + (current * getSlideWidth()) + 'px)';
+                prevBtn.disabled = current === 0;
+                nextBtn.disabled = current === total - 1;
+            }
+
+            prevBtn.addEventListener('click', function() { goTo(current - 1); });
+            nextBtn.addEventListener('click', function() { goTo(current + 1); });
+            window.addEventListener('resize', function() {
+                track.style.transform = 'translateX(-' + (current * getSlideWidth()) + 'px)';
+            });
+        })();
+    </script>
+</div>
+<br class="linebreak">
+<br class="linebreak">
+<br class="linebreak">
+<br class="linebreak">
+<br class="linebreak">
+<br class="linebreak">
+</main>
 
     <!--Footer -->
     <footer class="footer">
